@@ -270,6 +270,8 @@ redis:
   # with a key of redis-password set to the password you want
   # auth:
     # existingSecret: ""
+  # set Redis namespace (optional); affects ElasticSearch prefix
+  namespace: ""
 
 # @ignored
 service:
