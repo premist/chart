@@ -5,6 +5,10 @@ metadata:
   labels:
     {{- include "mastodon.labels" . | nindent 4 }}
 data:
+  {{- with .Values.mastodon.github_repository }}
+  GITHUB_REPOSITORY: {{ . }}
+  {{- end }}
+
   {{- if .Values.postgresql.enabled }}
   DB_HOST: {{ template "mastodon.postgresql.fullname" . }}
   DB_PORT: "5432"
