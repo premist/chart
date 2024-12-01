@@ -43,9 +43,6 @@ spec:
           {{- end }}
           image: "{{ .Values.image.repository }}/streaming:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command:
-            - node
-            - ./streaming
           envFrom:
             - configMapRef:
                 name: {{ include "mastodon.fullname" . }}-env
